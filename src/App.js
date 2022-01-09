@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React , {Component} from 'react';
+import { bibleSymbols } from './data/data';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class Symbols extends Component{
+  render(){
+
+    const Symbols = Object.entries(bibleSymbols).map(item => {
+      return item
+    
+    })
+    console.log(Symbols);
+    return(
+      <ul>
+        {Symbols.forEach((item) => {
+          <li>{item}</li>
+        })}
+    
+      </ul>
+    )
+  }
 }
+
+class App extends Component {
+  render(){
+    return (
+      <div>
+        <p>HELLO</p>
+        <Symbols />
+      </div>
+
+    )
+  }
+ 
+}
+
 
 export default App;
